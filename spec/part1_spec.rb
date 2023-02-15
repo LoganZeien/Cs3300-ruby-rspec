@@ -2,19 +2,19 @@
 
 require_relative '../lib/ruby_intro'
 
-describe 'Ruby intro part 1' do
-  describe '#sum' do
+describe 'Ruby intro part 1' do 
+  describe '#sum' do # The describe statement provides the context behind the spec
 
-    it 'returns correct sum [1 point]', points: 1 do
-      expect(sum([1, 2, 3, 4, 5])).to be_a_kind_of Integer
-      expect(sum([1, 2, 3, 4, 5])).to eq(15)
-      expect(sum([1, 2, 3, 4, -5])).to eq(5)
+    it 'returns correct sum [1 point]', points: 1 do  # it describes the example/specific test case we are doing, 
+      expect(sum([1, 2, 3, 4, 5])).to be_a_kind_of Integer  # expect describes what we expect to be the result of the function
+      expect(sum([1, 2, 3, 4, 5])).to eq(15)  # we expect sum of 1+2+3+4+5 to be 15 from the sum function
+      expect(sum([1, 2, 3, 4, -5])).to eq(5)  # .to matches with a "matcher", here that is eq(), but there are many kinds
       expect(sum([1, 2, 3, 4, -5, 5, -100])).to eq(-90)
     end
 
-    it 'works on the empty array [2 points]', points: 2 do
-      expect { sum([]) }.not_to raise_error
-      expect(sum([])).to be_zero
+    it 'works on the empty array [2 points]', points: 2 do  # Up to here we read: On the sum fuunction, it works onthe empty array, 
+      expect { sum([]) }.not_to raise_error # we expect it to not match raise_error
+      expect(sum([])).to be_zero  # we expect it to not match be_zero
     end
   end
 
