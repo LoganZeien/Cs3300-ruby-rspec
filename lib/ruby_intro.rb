@@ -2,26 +2,36 @@
 
 # Part 1
 
+# sum all the elements in the array
 def sum arr
-  # YOUR CODE HERE
+  arr.sum
 end
 
+# sum the largest two elements int the array
 def max_2_sum arr
-  # YOUR CODE HERE
+  arr.max(2).sum()
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  for pair in arr.combination(2).to_a do
+    if pair.sum == n
+      return true
+    end
+  end
+  return false
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s.downcase.match(/(?=^[^aeiou])(?=^[a-z])/)
+    return true
+  end
+  return false
 end
 
 def binary_multiple_of_4? s
